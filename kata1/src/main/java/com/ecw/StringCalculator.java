@@ -3,11 +3,15 @@ package com.ecw;
 public class StringCalculator {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
-	public int add() {
-		return 0;
+	public int add(String strNumbers) {
+		if(strNumbers==null || "".equalsIgnoreCase(strNumbers.trim())) {
+			return 0;
+		}else
+		{
+			return Integer.parseInt(strNumbers);
+		}
 	}
 }
