@@ -7,11 +7,18 @@ public class StringCalculator {
 	}
 
 	public int add(String strNumbers) {
+		int sumOfNumbers=0;
 		if(strNumbers==null || "".equalsIgnoreCase(strNumbers.trim())) {
 			return 0;
-		}else
-		{
-			return Integer.parseInt(strNumbers);
 		}
+		
+		String[] numArray = strNumbers.split(",");
+		
+		for(int i=0;i<numArray.length;i++) {
+			sumOfNumbers+=Integer.parseInt(numArray[i]);
+		}
+			
+		return sumOfNumbers;
+		
 	}
 }
