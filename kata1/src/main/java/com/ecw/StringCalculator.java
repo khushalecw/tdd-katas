@@ -1,5 +1,8 @@
 package com.ecw;
 
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
 public class StringCalculator {
 
 	public static void main(String[] args) {
@@ -12,13 +15,20 @@ public class StringCalculator {
 			return 0;
 		}
 		
-		String[] numArray = strNumbers.split(",");
+		ArrayList<String> numArray = new ArrayList<String>();
 		
-		for(int i=0;i<numArray.length;i++) {
-			sumOfNumbers+=Integer.parseInt(numArray[i]);
+        StringTokenizer st = new StringTokenizer(strNumbers,"\n,");
+        while(st.hasMoreTokens()){
+        	numArray.add(st.nextToken());
+        }
+        
+		for(int i=0;i<numArray.size();i++) {
+			sumOfNumbers+=Integer.parseInt(numArray.get(i));
 		}
 			
 		return sumOfNumbers;
 		
 	}
+	
+	
 }
